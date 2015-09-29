@@ -3,6 +3,7 @@ package controllers
 import (
 	"github.com/astaxie/beego"
 	_ "github.com/jmcvetta/napping"
+	"fmt"
 )
 
 type MainController struct {
@@ -25,7 +26,14 @@ func (c *AppLaunch) Get() {
 }
 
 func (c *AppLaunch) Post() {
-	c.Data["appname"] = c.GetString("appname")
+	//c.ParseForm()
 
+	appname := c.GetString("appname")
+
+	c.Data["Website"] = "Klouds.io"
+	c.Data["Email"] = "faddat@gmail.com"
+
+	fmt.Println("App Name: " ,appname)
 	c.TplNames = "applaunch.tpl"
+	c.Ctx.Output.Body([]byte("Launching " + appname + "!"))
 }

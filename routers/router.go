@@ -7,5 +7,5 @@ import (
 
 func init() {
     beego.Router("/", &controllers.MainController{})
-    beego.Router("appLaunch", &controllers.AppLaunch{})
+    beego.Router("/appLaunch/:id([0-9]+)", &controllers.AppLaunch{})
 }

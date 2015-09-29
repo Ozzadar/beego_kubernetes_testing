@@ -18,12 +18,15 @@
   </header>
 
   <div class="content">
-    <button type="submit" formmethod="post" formaction="/">Launch App!</button>
+    <form action = "" method = "post">
+        App Name：<input name="appname" type="text" />
+        <input type="submit" name="launchapp" value="Launch App{{.Id}}" />
+    </form>
   </div>
   <footer>
     <div class="author">
       Official website:
-      <a href="http://{{.Website}}">{{.Website}}</a> /
+      <a href="http://{{.Website}}">{{.Website}} {{.Id}}</a> /
       Contact me:
       <a class="email" href="mailto:{{.Email}}">{{.Email}}</a>
     </div>
